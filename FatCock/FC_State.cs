@@ -112,6 +112,13 @@ public class FC_State
                                 int number_ = Convert.ToInt32(result, 16);
                                 Push(number_.ToString(), "number");
                             }
+                            // check if argument is binary
+                            else if (result.StartsWith("0b"))
+                            {
+                                // convert to number
+                                int number_ = Convert.ToInt32(result, 2);
+                                Push(number_.ToString(), "number");
+                            }
                             else
                             {
                                 // unknown case, lets error
