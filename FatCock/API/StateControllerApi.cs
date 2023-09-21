@@ -2,8 +2,11 @@
 
 public class StateControllerApi
 {
-    public static void Push(FC_State state, int args)
+    public static void Push(FC_State state)
     {
+        // get the number of arguments (things on the stack)
+        int args = state.GetTop();
+
         if (state == null)
             throw new Exception("State is null (Impossible error)");
         else
@@ -16,8 +19,11 @@ public class StateControllerApi
         }
     }
 
-    public static void Pop(FC_State state, int args)
+    public static void Pop(FC_State state)
     {
+        // get the number of arguments (things on the stack)
+        int args = state.GetTop();
+
         if (state == null)
             throw new Exception("State is null (Impossible error)");
         else

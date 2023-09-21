@@ -19,10 +19,7 @@ public class Program
 
             // print error
             Console.WriteLine(err);
+            Console.ReadKey();
         }
-
-        // some extra key stuff so it doesnt instantly close the console
-        Console.WriteLine("Press anything to continue..");
-        Console.ReadKey();
     }
 }

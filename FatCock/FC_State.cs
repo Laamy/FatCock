@@ -12,6 +12,16 @@ public class FC_State
     // define queue for script execution
     public Queue<string> ExecutionQueue = new Queue<string>();
 
+    public int GetTop()
+    {
+        if (Stack.Count == 0)
+            return Stack.Count;
+
+        return Stack.Count / 2;
+    }
+
+    public int GetRawTop() => Stack.Count;
+
     public void Push(string state, string type)
     {
         Stack.Push(state);
@@ -119,6 +129,11 @@ public class FC_State
                                 int number_ = Convert.ToInt32(result, 2);
                                 Push(number_.ToString(), "number");
                             }
+                            else if (result == "")
+                            {
+                                // dont push anything as its an empty argument & break
+                                break;
+                            }
                             else
                             {
                                 // unknown case, lets error
@@ -127,7 +142,7 @@ public class FC_State
                         }
 
                         // invoke function with state as argument
-                        method.Invoke(null, new object[] { this, args.Length });
+                        method.Invoke(null, new object[] { this });
                     }
                     else throw new Exception($"Invalid method {functionName} in {className}");
                 }

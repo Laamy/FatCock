@@ -49,6 +49,7 @@
     <Compile Include="API\Headers.cs" />
     <Compile Include="FC_State.cs" />
     <Compile Include="Parsers\FCParser.cs" />
+    <Compile Include="Parsers\ParsingState.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -57,6 +58,8 @@
     <None Include="example.fc">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
+    <None Include="examples\counting.fc" />
+    <None Include="examples\hello world.fc" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

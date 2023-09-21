@@ -4,8 +4,12 @@ using System.Threading;
 public class ThreadingApi
 {
     // sleep in seconds
-    public static void Sleep(FC_State state, int args)
+    public static void Sleep(FC_State state)
     {
+        // get the number of arguments (things on the stack)
+        int args = state.GetTop();
+
+        // check for 1 argument
         if (args == 1)
         {
             var result = state.Pop();

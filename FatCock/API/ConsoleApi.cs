@@ -3,8 +3,12 @@
 public class ConsoleApi
 {
     // write to console
-    public static void Write(FC_State state, int args)
+    public static void Write(FC_State state)
     {
+        // get the number of arguments (things on the stack)
+        int args = state.GetTop();
+
+        // check for 1 argument
         if (args == 1)
         {
             var result = state.Pop();
@@ -23,8 +27,12 @@ public class ConsoleApi
     }
 
     // write to console with new line
-    public static void WriteLine(FC_State state, int args)
+    public static void WriteLine(FC_State state)
     {
+        // get the number of arguments (things on the stack)
+        int args = state.GetTop();
+
+        // check for 1 argument
         if (args == 1)
         {
             var result = state.Pop();
@@ -43,13 +51,32 @@ public class ConsoleApi
     }
 
     // clear console
-    public static void Clear(FC_State state, int args)
+    public static void Clear(FC_State state)
     {
+        // get the number of arguments (things on the stack)
+        int args = state.GetTop();
+
+        // check for 0 arguments
         if (args == 0)
         {
             // clear console
             Console.Clear();
         }
         else throw new Exception("Clear function takes 0 arguments");
+    }
+
+    public static void PauseUntilKey(FC_State state)
+    {
+        // get the number of arguments (things on the stack)
+        int args = state.GetTop();
+
+        // check for 0 arguments
+        if (args == 0)
+        {
+            // wait for key press
+            Console.WriteLine("Press any key to continue...");
+            Console.ReadKey();
+        }
+        else throw new Exception("PauseUntilKey function takes 0 arguments");
     }
 }
