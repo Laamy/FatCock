@@ -131,8 +131,10 @@ public class FC_State
                             }
                             else if (result == "")
                             {
-                                // dont push anything as its an empty argument & break
-                                break;
+                                // empty argument so first lets check if the caller entered any arguments at all
+                                if (args.Length == 1)
+                                    break;
+                                else throw new Exception($"Invalid argument {result} in {className}.{functionName}");
                             }
                             else
                             {
