@@ -94,7 +94,7 @@ public class FC_State
                                 Push(result.Substring(1, result.Length - 2), "string");
                             }
                             // check if argument is a number
-                            else if (int.TryParse(result, out int number))
+                            else if (float.TryParse(result, out float number))
                             {
                                 // push number
                                 Push(number.ToString(), "number");
