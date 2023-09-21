@@ -43,9 +43,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="API\FC_Console.cs" />
-    <Compile Include="API\FC_StateController.cs" />
-    <Compile Include="API\FC_Thread.cs" />
+    <Compile Include="API\ConsoleApi.cs" />
+    <Compile Include="API\StateControllerApi.cs" />
+    <Compile Include="API\ThreadingApi.cs" />
     <Compile Include="API\Headers.cs" />
     <Compile Include="FC_State.cs" />
     <Compile Include="Parsers\FCParser.cs" />

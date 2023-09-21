@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-public class FC_Thread
+public class ThreadingApi
 {
     // sleep in seconds
     public static void Sleep(FC_State state, int args)
@@ -13,7 +13,7 @@ public class FC_Thread
             if (result.Key == "number")
             {
                 // get the time from the state
-                int time = int.Parse(result.Value) / 1000;
+                int time = int.Parse(result.Value) * 1000;
 
                 // sleep
                 Thread.Sleep(time);

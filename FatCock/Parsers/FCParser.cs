@@ -33,6 +33,10 @@ public class FCParser
                 if (type == null)
                     throw new Exception($"Header {header} not found");
 
+                // check for duplicate imports
+                if (state.HasImport(type))
+                    throw new Exception($"Duplicate import {type}");
+
                 // finally add the header to the state
                 state.PushImport(new List<object> { thing, type });
             }

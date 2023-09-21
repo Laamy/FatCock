@@ -93,6 +93,12 @@ public class FC_State
                                 // push string without quotes
                                 Push(result.Substring(1, result.Length - 2), "string");
                             }
+                            // check if argument is a number
+                            else if (int.TryParse(result, out int number))
+                            {
+                                // push number
+                                Push(number.ToString(), "number");
+                            }
                             else
                             {
                                 // unknown case, lets error
@@ -118,5 +124,17 @@ public class FC_State
 
         // we executed the script state successfully so return true
         return true;
+    }
+
+    public bool HasImport(Type thing)
+    {
+        // loop over each import and check if the type is already imported
+        foreach (List<object> import in Imports)
+        {
+            if (import[1] == thing)
+                return true;
+        }
+
+        return false;
     }
 }

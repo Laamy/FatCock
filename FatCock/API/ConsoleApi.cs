@@ -1,6 +1,6 @@
 ﻿using System;
 
-public class FC_Console
+public class ConsoleApi
 {
     // write to console
     public static void Write(FC_State state, int args)
