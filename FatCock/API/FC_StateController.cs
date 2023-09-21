@@ -30,6 +30,7 @@ public class FC_StateController
             // pop the stack the amount args[1] tells us to
             var result = state.Pop();
 
+            // check if the argument is a number
             if (result.Key == "number")
             {
                 for (int i = 0; i < args; i++)
