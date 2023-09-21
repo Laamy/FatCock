@@ -105,6 +105,13 @@ public class FC_State
                                 // push boolean
                                 Push(result, "boolean");
                             }
+                            // check if argument is hexadecimal
+                            else if (result.StartsWith("0x"))
+                            {
+                                // convert to number
+                                int number_ = Convert.ToInt32(result, 16);
+                                Push(number_.ToString(), "number");
+                            }
                             else
                             {
                                 // unknown case, lets error
