@@ -1,9 +1,10 @@
-import "Console" from "FC_Console"
+import as "Console" from "FC_Console"
+import as "Lolsome" from "FC_Console"
 
 Console.WriteLine("Hello World")
-Console.WriteLine("Hello World from yeemi !")
+Lolsome.WriteLine("Hello World from yeemi !")
 Console.WriteLine("hello from raci")
 
 Console.Write("1")
-Console.Write(" 2")
+Lolsome.Write(" 2")
 Console.WriteLine(" 3")

@@ -16,7 +16,7 @@ public class FCParser
         foreach (string line in lines)
         {
             // handle import statements (Import THING from HEADER)
-            Match match = Regex.Match(line, @"import\s+""(.*?)""\s+from\s+""(.*?)""");
+            Match match = Regex.Match(line, @"import\sas\s+""(.*?)""\s+from\s+""(.*?)""");
             if (match.Success)
             {
                 // thing & header from regex to strings from reg (Match)
