@@ -99,6 +99,12 @@ public class FC_State
                                 // push number
                                 Push(number.ToString(), "number");
                             }
+                            // check if argument is a boolean
+                            else if (result == "true" || result == "false")
+                            {
+                                // push boolean
+                                Push(result, "boolean");
+                            }
                             else
                             {
                                 // unknown case, lets error
